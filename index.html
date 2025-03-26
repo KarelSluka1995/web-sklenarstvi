@@ -18,7 +18,6 @@
                 <a href="#gallery">Naše práce</a>
                 <a href="#price-list">Ceník</a>
                 <a href="#contact">Kontakt</a>
-                <a href="tel:+420604402714" class="nav-cta">Zavolejte nám</a>
             </div>
             <button class="mobile-menu-btn">
                 <span></span>
@@ -27,6 +26,13 @@
             </button>
         </div>
     </nav>
+    <div class="nav-overlay"></div>
+
+    <!-- Add floating call button -->
+    <a href="tel:+420604402714" class="floating-call-btn">
+        <i class="ti ti-phone"></i>
+        <span>Zavolejte nám</span>
+    </a>
 
     <header>
         <div class="header-content">
@@ -364,17 +370,26 @@
         // Mobile menu toggle
         const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
         const navLinks = document.querySelector('.nav-links');
+        const navOverlay = document.querySelector('.nav-overlay');
+        const body = document.body;
 
-        mobileMenuBtn.addEventListener('click', () => {
+        function toggleMenu() {
             mobileMenuBtn.classList.toggle('active');
             navLinks.classList.toggle('active');
-        });
+            navOverlay.classList.toggle('active');
+            body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : '';
+        }
+
+        mobileMenuBtn.addEventListener('click', toggleMenu);
+        navOverlay.addEventListener('click', toggleMenu);
 
         // Close mobile menu when clicking a link
         document.querySelectorAll('.nav-links a').forEach(link => {
             link.addEventListener('click', () => {
                 mobileMenuBtn.classList.remove('active');
                 navLinks.classList.remove('active');
+                navOverlay.classList.remove('active');
+                body.style.overflow = '';
             });
         });
 
