@@ -119,83 +119,51 @@ h2 {
 @media (max-width: 768px) {
     .services-grid {
         grid-template-columns: 1fr;
-        gap: 20px;
-        padding: 15px;
-    }
-
-    .service-item {
-        padding: 20px;
-    }
-
-    .service-front h3 {
-        font-size: 1.2rem;
-    }
-
-    .service-front p {
-        font-size: 0.95rem;
-    }
-}
-
-/* Add icon for flipping indicator */
-.flip-indicator {
-    position: absolute;
-    bottom: 15px;
-    font-size: 1.2rem;
-    color: rgba(0, 0, 0, 0.2);
-    transition: color 0.3s ease;
-}
-
-.service-front:hover .flip-indicator,
-.service-front:focus .flip-indicator {
-    color: rgba(0, 0, 0, 0.5);
-}
-
-@media (max-width: 768px) {
-    .services-grid {
-        grid-template-columns: 1fr;
         gap: 15px;
         padding: 0 10px;
     }
 
     .service-item {
-        height: 160px;
+        padding: 25px;
+        min-height: 160px;
     }
     
     .service-front h3 {
         font-size: 1.2rem;
-        padding: 0 10px;
+        padding: 0 0 10px 0;
+        margin-bottom: 10px;
     }
     
-    .service-back p {
-        font-size: 0.9rem;
-        padding: 0 10px;
+    .service-front p {
+        font-size: 0.95rem;
+        line-height: 1.5;
+        padding: 0;
     }
 
     .flip-indicator {
         font-size: 1rem;
-        bottom: 10px;
+        bottom: 15px;
     }
 
-    /* Add touch feedback */
+    /* Remove touch feedback and transform effects */
     .service-front:active,
     .service-back:active {
-        transform: scale(0.98);
+        transform: none;
     }
 
-    /* Make cards more touch-friendly */
     .service-card {
-        transform-style: preserve-3d;
-        -webkit-transform-style: preserve-3d;
+        transform-style: none;
+        -webkit-transform-style: none;
     }
 
     .service-front, .service-back {
-        -webkit-backface-visibility: hidden;
-        backface-visibility: hidden;
+        -webkit-backface-visibility: visible;
+        backface-visibility: visible;
     }
 
     .service-back {
-        transform: rotateY(180deg);
-        -webkit-transform: rotateY(180deg);
+        transform: none;
+        -webkit-transform: none;
     }
 }
 
