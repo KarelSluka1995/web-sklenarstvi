@@ -199,53 +199,30 @@
         <h2>Naše práce</h2>
         <div class="gallery-grid">
             <div class="gallery-item">
-                <a href="./posuvne_dvere.jpg" class="lightbox">
-                    <div class="photo" style="background-image: url('./posuvne_dvere.jpg')">
+                <a href="./kebab_vyloha.webp" class="lightbox">
+                    <div class="photo" style="background-image: url('./kebab_vyloha.webp')">
                         <div class="magnify">
                             <i class="ti ti-zoom-in"></i>
                         </div>
                     </div>
-                    <p>Posuvné dveře</p>
                 </a>
             </div>
             <div class="gallery-item">
-                <a href="./vyloha.jpg" class="lightbox">
-                    <div class="photo" style="background-image: url('./vyloha.jpg')">
+                <a href="./kuchyn_obklad_svetla_2_2.webp" class="lightbox">
+                    <div class="photo" style="background-image: url('./kuchyn_obklad_svetla_2_2.webp')">
                         <div class="magnify">
                             <i class="ti ti-zoom-in"></i>
                         </div>
                     </div>
-                    <p>Výlohy a prosklené stěny</p>
                 </a>
             </div>
             <div class="gallery-item">
-                <a href="./sklenene_zabradli.jpg" class="lightbox">
-                    <div class="photo" style="background-image: url('./sklenene_zabradli.jpg')">
+                <a href="./pergola_matna_4.webp" class="lightbox">
+                    <div class="photo" style="background-image: url('./pergola_matna_4.webp')">
                         <div class="magnify">
                             <i class="ti ti-zoom-in"></i>
                         </div>
                     </div>
-                    <p>Skleněné zábradlí</p>
-                </a>
-            </div>
-            <div class="gallery-item">
-                <a href="./sklenene_zabradli_schody.jpg" class="lightbox">
-                    <div class="photo" style="background-image: url('./sklenene_zabradli_schody.jpg')">
-                        <div class="magnify">
-                            <i class="ti ti-zoom-in"></i>
-                        </div>
-                    </div>
-                    <p>Zábradlí schodiště</p>
-                </a>
-            </div>
-            <div class="gallery-item">
-                <a href="./pergola.jpg" class="lightbox">
-                    <div class="photo" style="background-image: url('./pergola.jpg')">
-                        <div class="magnify">
-                            <i class="ti ti-zoom-in"></i>
-                        </div>
-                    </div>
-                    <p>Zasklení pergoly</p>
                 </a>
             </div>
             <div class="gallery-item">
@@ -255,9 +232,32 @@
                             <i class="ti ti-zoom-in"></i>
                         </div>
                     </div>
-                    <p>Sprchové kouty</p>
                 </a>
             </div>
+            <div class="gallery-item">
+                <a href="./zabradli_tmave.webp" class="lightbox">
+                    <div class="photo" style="background-image: url('./zabradli_tmave.webp')">
+                        <div class="magnify">
+                            <i class="ti ti-zoom-in"></i>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="gallery-item">
+                <a href="./posuvne_dvere.jpg" class="lightbox">
+                    <div class="photo" style="background-image: url('./posuvne_dvere.jpg')">
+                        <div class="magnify">
+                            <i class="ti ti-zoom-in"></i>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="view-all-container">
+            <a href="gallery.html" class="view-all-btn">
+                <i class="ti ti-photo"></i>
+                Zobrazit celou galerii
+            </a>
         </div>
     </section>
 
@@ -474,7 +474,7 @@
                 e.preventDefault();
                 currentImageIndex = index;
                 updateLightboxImage();
-                lightboxOverlay.style.display = 'block';
+                lightboxOverlay.style.display = 'flex';
                 document.body.style.overflow = 'hidden';
             });
         });
@@ -482,7 +482,6 @@
         // Navigation functions
         function updateLightboxImage() {
             lightboxImg.src = images[currentImageIndex];
-            lightboxImg.alt = galleryItems[currentImageIndex].querySelector('p').textContent;
         }
 
         function showNextImage() {
@@ -508,7 +507,7 @@
 
         // Add keyboard navigation
         document.addEventListener('keydown', (e) => {
-            if (lightboxOverlay.style.display === 'block') {
+            if (lightboxOverlay.style.display === 'flex') {
                 if (e.key === 'ArrowLeft') {
                     showPrevImage();
                 } else if (e.key === 'ArrowRight') {
